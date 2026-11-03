@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learning-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: learning-api
+  template:
+    metadata:
+      labels:
+        app: learning-api
+    spec:
+      containers:
+        - name: learning-api
+          image: YOUR_REGISTRY/learning-api:REPLACE_ME
+          ports:
+            - containerPort: 8080
